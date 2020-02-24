@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [[ ! -f backup.tar.gz ]]; then
+    echo "Backup file doesn't exist, aborting."
+    exit 1
+fi
+
 docker run \
     --rm \
     -v archilab-nexus_nexus-data:/nexus-data \
